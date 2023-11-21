@@ -2,17 +2,20 @@ import rstr
 from tdda import rexpy
 
 # create accept strings
-acceptRE = []
+acceptStrings = []
 for x in range(10): 
-    acceptRE.append(rstr.xeger('[A-Z0-9]{3} [A-Z0-9]{4}'))
+    acceptStrings.append(rstr.xeger('[A-Z0-9]{3} [A-Z0-9]{4}'))
 
 #create reject strings
-rejectRE = []
+rejectStrings = []
 for x in range(10): 
-    rejectRE.append(rstr.xeger('[A-Z0-9]{3} [A-Z0-9]{4}'))
+    rejectStrings.append(rstr.xeger('[A-Z0-9]{2} [A-Z0-9]{3}'))
 
 
-results = rexpy.extract(acceptRE)
+results = rexpy.extract(acceptStrings)
 print('Number of regular expressions found: %d' % len(results))
 for r in results:
     print('   ' + r)
+
+newReg = rexpy.Extractor(acceptStrings)
+print(newReg)
