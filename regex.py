@@ -3,14 +3,17 @@ from tdda import rexpy
 
 # create accept strings
 acceptStrings = []
-for x in range(10): 
+for r in range(10): 
     acceptStrings.append(rstr.xeger('[A-Z0-9]{3} [A-Z0-9]{4}'))
+
+#print(acceptStrings)
 
 #create reject strings
 rejectStrings = []
-for x in range(10): 
-    rejectStrings.append(rstr.xeger('[A-Z0-9]{2} [A-Z0-9]{3}'))
+for r in range(10): 
+    rejectStrings.append(rstr.xeger('reject'))
 
+#print(rejectStrings)
 
 results = rexpy.extract(acceptStrings)
 print('Number of regular expressions found: %d' % len(results))
