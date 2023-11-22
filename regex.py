@@ -31,3 +31,5 @@ for re1, n3 in zip(rejectRE.results.rex, rejectRE.coverage(dedup=True)):
 
 for re2, n4 in zip(rejectRE.results.rex, acceptRE.coverage(dedup=True)):
     print('%d accept string examples are matched by the rejectRE: %s' % (n4, re2))
+
+#######################
